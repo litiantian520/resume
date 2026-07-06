@@ -1,31 +1,45 @@
-name: Deploy to GitHub Pages
+name: Deploy Resume to GitHub Pages
 
 on:
   push:
     branches:
       - master
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
 
 jobs:
-  build-and-deploy:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
+      - name: Prepare deploy directory
+        run: |
+          mkdir -p deploy
+          cp resume.html deploy/index.html
+          cp photo.jpg photo1.png photo2.png photo3.png photo4.png photo5.png photo6.png deploy/
+          touch deploy/.nojekyll
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          node-version: 20
-          cache: 'npm'
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Build project
-        run: npm run build
+          path: ./deploy
 
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+        id: deployment
+        uses: actions/deploy-pages@v4
