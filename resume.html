@@ -42,6 +42,15 @@
     }
     a { color: inherit; text-decoration: none; }
     img { display: block; max-width: 100%; }
+    img[loading="lazy"] {
+      background: linear-gradient(110deg, #f0ebe3 8%, #faf7f2 18%, #f0ebe3 33%);
+      background-size: 200% 100%;
+      animation: shimmer 1.5s infinite;
+    }
+    @keyframes shimmer {
+      0% { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
 
     /* ========== 工具类 ========== */
     .container { max-width: 1140px; margin: 0 auto; padding: 0 32px; }
@@ -1577,7 +1586,7 @@
         </div>
         <div class="hero-right">
           <div class="avatar-frame">
-            <img class="avatar" src="photo.jpg" alt="头像" />
+            <img class="avatar" src="photo.webp" loading="eager" decoding="async" alt="头像" />
             <div class="avatar-badge">
               <div class="icon">🎓</div>
               <div class="text">
@@ -1721,7 +1730,7 @@
               <div class="exp-block-content">
                 <p>独立负责8个品类活动全流程，包括活动对接、目标制定、参加类目&店铺范围圈选、资源争取以及供给&各场域达成监控</p>
                 <div class="image-item" onclick="openLightbox(this)">
-                  <img src="photo1.png" alt="品类活动完成情况">
+                  <img src="photo1.webp" loading="lazy" decoding="async" alt="品类活动完成情况">
                   <span class="image-caption">品类活动完成情况</span>
                 </div>
               </div>
@@ -1736,7 +1745,7 @@
               <div class="exp-block-content">
                 <p>负责大促（38促、焕新促、618、七夕促、双11等）直播版块，包括招商进展、勤奋度追进、预算消耗及特大场次履约追进，直播玩法贡献对比同级别大促+6.5pp，其中特大场次vs目标+5.8pp，规模化提高直播场域GMV及行业控商能力</p>
                 <div class="image-item" onclick="openLightbox(this)">
-                  <img src="photo6.png" alt="大促直播板块运营">
+                  <img src="photo6.webp" loading="lazy" decoding="async" alt="大促直播板块运营">
                   <span class="image-caption">大促直播板块运营成果</span>
                 </div>
               </div>
@@ -1756,13 +1765,13 @@
                 <div class="image-grid">
                   <div class="image-item" onclick="openLightbox(this, true)">
                     <div class="img-box">
-                      <img src="photo2.png" alt="爆品手卡">
+                      <img src="photo2.webp" loading="lazy" decoding="async" alt="爆品手卡">
                     </div>
                     <span class="image-caption">爆品手卡</span>
                   </div>
                   <div class="image-item" onclick="openLightbox(this, true)">
                     <div class="img-box">
-                      <img src="photo3.png" alt="直播间运营指引">
+                      <img src="photo3.webp" loading="lazy" decoding="async" alt="直播间运营指引">
                     </div>
                     <span class="image-caption">直播间运营指引</span>
                   </div>
@@ -1812,7 +1821,7 @@
               <div class="exp-block-content">
                 <p>结合商家货品以及营销预算，进行前置测款+追投加热+争取站内免费资源的方式，在Q4季度供孵化5个百万单品，40+个十万单品，新品成交额占比提升47.69%</p>
                 <div class="image-item" onclick="openLightbox(this)">
-                  <img src="photo4.png" alt="新品孵化漏斗">
+                  <img src="photo4.webp" loading="lazy" decoding="async" alt="新品孵化漏斗">
                   <span class="image-caption">新品孵化与爆发推演漏斗</span>
                 </div>
               </div>
@@ -1829,7 +1838,7 @@
                   <li>基于商家规模与商业价值，建立了商家分层运营金字塔的分层赋能体系，Q4季度运营商家GMV QoQ+230.2%，YoY+4.55%</li>
                 </ul>
                 <div class="image-item" onclick="openLightbox(this)">
-                  <img src="photo5.png" alt="商家分层运营金字塔">
+                  <img src="photo5.webp" loading="lazy" decoding="async" alt="商家分层运营金字塔">
                   <span class="image-caption">商家分层运营金字塔模型</span>
                 </div>
               </div>
