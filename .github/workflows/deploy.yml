@@ -29,7 +29,8 @@ jobs:
         run: |
           mkdir -p deploy
           cp resume.html deploy/index.html
-          cp photo.jpg photo1.png photo2.png photo3.png photo4.png photo5.png photo6.png deploy/
+          cp photo.webp photo1.webp photo2.webp photo3.webp photo4.webp photo5.webp photo6.webp deploy/
+          cp photo.jpg photo1.png photo2.png photo3.png photo4.png photo5.png photo6.png deploy/ 2>/dev/null || true
           touch deploy/.nojekyll
 
       - name: Setup Pages
